@@ -8,28 +8,13 @@
 #include <iostream>
 using namespace std;
 
-int Binary(int num)
-{
-    int res = 0, mul = 1;
-    while (num > 0)
-    {
-        int rem = num % 2;
-        res = rem * mul + res;
-        num /= 2;
-        mul *= 10;
-    }
-    return res;
-}
-
-int CountOneBit(int bin)
+int CountOneBit(int num) // Effective method using bitwise operation
 {
     int c = 0;
-    while (bin > 0)
+    while (num > 0)
     {
-        int rem = bin % 10;
-        if (rem == 1)
-            c++;
-        bin /= 10;
+        c += (num & 1); // add 1 if last bit is 1 e
+        num >>= 1;      // right shifting
     }
     return c;
 }
@@ -40,13 +25,7 @@ int main()
     cout << "Enter the number: ";
     cin >> num;
 
-    int bin = Binary(num);
-
-    cout << "The Binary Conversation of " << num << " is: " << bin;
-
-    cout << endl;
-
-    int countonebit = CountOneBit(bin);
+    int countonebit = CountOneBit(num);
 
     cout << "The Number of 1 Bit in " << num << " is: " << countonebit;
     return 0;
