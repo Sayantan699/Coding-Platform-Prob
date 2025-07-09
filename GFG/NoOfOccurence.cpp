@@ -75,6 +75,8 @@ int main()
         }
     }
 
+    if (mid_index == -1)
+        return -1;
     int c = 1;
     int left = mid_index - 1;
     while (left >= 0 && arr[left] == k)
