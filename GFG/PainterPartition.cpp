@@ -65,7 +65,7 @@ int main()
     cout << "Enter the size of the array: ";
     cin >> n;
 
-    int arr[n];
+    vector<int> arr(n);
 
     cout << "Enter the elements of the array: " << endl;
     for (int i = 0; i < n; i++)
