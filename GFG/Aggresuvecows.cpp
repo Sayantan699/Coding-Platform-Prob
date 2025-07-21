@@ -14,6 +14,7 @@
 //     among all possible ways.
 #include <iostream>
 #include <vector>
+#include <algorithm> // for sort()
 using namespace std;
 int main()
 {
@@ -38,14 +39,18 @@ int main()
 
     cout << endl;
 
-    int start = arr[0], end, mid, ans;
+    int start = 1, end, mid, ans = -1; // 1 is the minimum possbile distance
 
     sort(arr.begin(), arr.end()); // Sorted the array in increasing order
 
     end = arr[n - 1] - arr[0];
+
+    int k;
+    cout << "Enter the number of cows: ";
+    cin >> k;
     while (start <= end)
     {
-        int count = 0, pos = arr[0];
+        int count = 1, pos = arr[0];
         mid = start + (end - start) / 2;
         for (int i = 1; i < n; i++)
         {
@@ -54,17 +59,19 @@ int main()
                 count++;
                 pos = arr[i];
             }
-            if (count < k)
-            {
-                end = mid - 1;
-            }
-            else
-            {
-                ans = mid;
-                start = mid + 1;
-            }
+        }
+        if (count < k)
+        {
+            end = mid - 1;
+        }
+        else
+        {
+            ans = mid;
+            start = mid + 1;
         }
     }
 
-    return ans;
+    cout << ans;
+
+    return 0;
 }
