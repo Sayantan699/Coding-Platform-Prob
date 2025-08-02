@@ -21,7 +21,7 @@ int main()
         }
     }
 
-    cout << "The elements of the array are: ";
+    cout << "The elements of the array are: " << endl;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
