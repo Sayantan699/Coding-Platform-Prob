@@ -52,7 +52,7 @@ int main()
         }
     }
 
-    // printing the array after rotating the original array
+    // printing the array after rotating the original array in anti-clockwise...
 
     cout << "The array after rotating 90deg Anti-Clockwise is: " << endl;
     for (int i = 0; i < n; i++)
