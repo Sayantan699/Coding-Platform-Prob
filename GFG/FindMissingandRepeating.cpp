@@ -33,5 +33,18 @@ int main()
 
     cout << endl;
 
-        return 0;
+    int original_sum = (n * (n + 1)) / 2;
+
+    int modifiedsum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        modifiedsum += arr[i];
+    }
+
+    if (modifiedsum == original_sum)
+        cout << "No Missing element in the array";
+    else
+        cout << "The missing element of the array is: " << (original_sum - modifiedsum);
+
+    return 0;
 }
