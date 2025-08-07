@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 int main()
@@ -34,17 +35,23 @@ int main()
     cout << endl;
 
     int original_sum = (n * (n + 1)) / 2;
-
+    // The missing element = original sum - (modified sum - duplicate)
     int modifiedsum = 0;
+    int duplicate = -1;
+    unordered_map<int, int> freq; // act as a key value pair to store the element and the number of times its appeared
     for (int i = 0; i < n; i++)
     {
         modifiedsum += arr[i];
+        freq[arr[i]]++;
+        if (freq[arr[i]] == 2)
+        {
+            duplicate = arr[i];
+        }
     }
 
-    if (modifiedsum == original_sum)
-        cout << "No Missing element in the array";
-    else
-        cout << "The missing element of the array is: " << (original_sum - modifiedsum);
+    int missing = original_sum - (modifiedsum - duplicate);
+    cout << "The repeating number is: " << duplicate << endl;
+    cout << "The missing number is: " << missing << endl;
 
     return 0;
 }
