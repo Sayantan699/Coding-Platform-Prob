@@ -34,9 +34,13 @@ int main()
 
     cout << endl;
 
-    int original_sum = (n * (n + 1)) / 2;
+    // Using long long to prevent overflowing
+
+    // Here using 1LL despite of using long long as data type coz the right hand expression is evaluated first i.e if its not 1LL
+    //  it will evaluated as intenger then convert to long long before than overflow will happen to prevent that we use 1LL...
+    long long original_sum = (1LL * n * (n + 1)) / 2; // Here 1LL means Long long
     // The missing element = original sum - (modified sum - duplicate)
-    int modifiedsum = 0;
+    long long modifiedsum = 0;
     int duplicate = -1;
     unordered_map<int, int> freq; // act as a key value pair to store the element and the number of times its appeared
     for (int i = 0; i < n; i++)
@@ -49,7 +53,7 @@ int main()
         }
     }
 
-    int missing = original_sum - (modifiedsum - duplicate);
+    long long missing = original_sum - (modifiedsum - duplicate);
     cout << "The repeating number is: " << duplicate << endl;
     cout << "The missing number is: " << missing << endl;
 
