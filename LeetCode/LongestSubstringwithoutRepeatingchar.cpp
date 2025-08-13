@@ -8,6 +8,9 @@
 //     Output : 3 Explanation : The answer is "abc", with the length of 3.
 
 // Sliding window method
+#include <iostream>
+#include <vector>
+using namespace std;
 int lengthOfLongestSubstring(string s)
 {
     vector<bool> count(256, 0);
