@@ -17,7 +17,7 @@ int lengthOfLongestSubstring(string s)
     int first = 0, second = 0, len = 0;
     while (second < s.size())
     {
-        while (count[s[second]])
+        while (count[s[second]]) // before increasing the size of the window checking if the character was already present on the substring or not
         {
             count[s[first]] = 0;
             first++;
