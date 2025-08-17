@@ -23,6 +23,9 @@ int minChar(string &s)
     s += '$';
     s += rev;
 
+    // Here we have taken the size of the LPS array as 2 * size + 1 as it contains the size of the original array and the reverse
+    // array with the additional symbol
+
     vector<int> lps(2 * size + 1, 0);
     int pre = 0, suf = 1;
     while (suf < s.size())
