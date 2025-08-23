@@ -34,15 +34,7 @@ int main()
 
     cout << endl;
 
-    // Sorting the array before applying Binary search using bubble sort
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-                swap(arr[j], arr[j + 1]);
-        }
-    }
+    sort(arr.begin(), arr.end()); // less time required than usual bubble sort
 
     cout << "The elements of the array after bubble sorting are: " << endl;
     for (int i = 0; i < n; i++)
