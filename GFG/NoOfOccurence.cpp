@@ -35,9 +35,9 @@ int main()
     cout << endl;
 
     // Sorting the array before applying Binary search using bubble sort
-    for (int i = n - 2; i >= 0; i--)
+    for (int i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j <= i; j++)
+        for (int j = 0; j < n - i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
                 swap(arr[j], arr[j + 1]);
