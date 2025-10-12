@@ -8,7 +8,7 @@
 
 //     Input : arr[] = [ 1, 4, 45, 6, 10, 8 ],
 //     target = 13 Output : true
-//     Explanation : The triplet{1, 4, 8} sums up to 13
+//     Explanation : The triplet{1, 4, 8} is for sums up to 13
 
 #include <vector>
 #include <algorithm>
