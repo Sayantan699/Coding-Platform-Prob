@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Declaring the structure of Node
 class Node {
 public:
     int data;
@@ -14,7 +15,7 @@ public:
     }
 };
 
-
+//Function to return a list containing elements of left view of binary tree.
 class Solution {
   public:
     vector<int> leftView(Node *root) {
